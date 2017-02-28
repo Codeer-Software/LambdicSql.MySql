@@ -12,6 +12,9 @@ EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LambdicSql.MySql.Shared", "LambdicSql.MySql.Shared\LambdicSql.MySql.Shared.shproj", "{028FE542-3C97-45FB-88A6-8EED82AF2D68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.MySql", "LambdicSql.MySql\LambdicSql.MySql.csproj", "{335592C4-241D-4E16-94E0-B1A23FC279B9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77EF028A-D7AF-45C8-90D6-19492EDC0CFB} = {77EF028A-D7AF-45C8-90D6-19492EDC0CFB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdicSql.MySql.PCL", "LambdicSql.MySql.PCL\LambdicSql.MySql.PCL.csproj", "{77EF028A-D7AF-45C8-90D6-19492EDC0CFB}"
 EndProject
