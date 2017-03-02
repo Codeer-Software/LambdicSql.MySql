@@ -53,14 +53,6 @@ namespace LambdicSql.MySql
         public static OrderByElement Desc(object target) { throw new InvalitContextException(nameof(Desc)); }
 
         /// <summary>
-        /// TOP Keyword.
-        /// </summary>
-        /// <param name="count">Count.</param>
-        /// <returns>TOP.</returns>
-        [MethodFormatConverter(Format = "TOP [$0]")]
-        public static TopElement Top(long count) { throw new InvalitContextException(nameof(Top)); }
-
-        /// <summary>
         /// ALL Keyword
         /// </summary>
         /// <returns>ALL.</returns>
@@ -86,7 +78,7 @@ namespace LambdicSql.MySql
         /// </summary>
         /// <returns>Date of executing SQL.</returns>
         [CurrentDateTimeConverter(Name = "TIME")]
-        public static TimeSpan Current_Time() { throw new InvalitContextException(nameof(DateTimeOffset)); }
+        public static TimeSpan Current_Time() { throw new InvalitContextException(nameof(Current_Time)); }
 
         /// <summary>
         /// CURRENT_TIMESTAMP Keyword.
@@ -94,17 +86,5 @@ namespace LambdicSql.MySql
         /// <returns>Date and time of executing SQL.</returns>
         [CurrentDateTimeConverter(Name = "TIMESTAMP")]
         public static DateTime Current_TimeStamp() { throw new InvalitContextException(nameof(Current_TimeStamp)); }
-
-        /// <summary>
-        /// DUAL keyword.
-        /// </summary>
-        [MemberConverter]
-        public static object Dual { get { throw new InvalitContextException(nameof(Dual)); } }
-
-        /// <summary>
-        /// ROWNUM BETWEEN keyword.
-        /// </summary>
-        [ClauseStyleConverter]
-        public static object RowNum() { throw new InvalitContextException(nameof(RowNum)); }
     }
 }

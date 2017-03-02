@@ -28,8 +28,6 @@ namespace Test
         [TestMethod]
         public void Test_CreateTable_MySQL()
         {
-            if (!_connection.IsTarget(TargetDB.MySQL)) return;
-
             CleanUpCreateDropTestTable();
 
             var sql = Db<DBForCreateTest>.Sql(db =>

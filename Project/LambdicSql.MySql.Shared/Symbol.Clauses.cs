@@ -4,12 +4,6 @@ using LambdicSql.Specialized.SymbolConverters;
 
 namespace LambdicSql.MySql
 {
-    //TODO Delete
-    /// <summary>
-    /// TOP keyword.
-    /// </summary>
-    public abstract class TopElement { }
-
     /// <summary>
     /// SQL Symbol.
     /// It can only be used within lambda of the LambdicSql.
@@ -36,28 +30,6 @@ namespace LambdicSql.MySql
         /// <returns>Clause.</returns>
         [SelectConverter]
         public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, T selected) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="T">Type of selected.</typeparam>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="selected">Specify a new expression to represent the selection.</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<T> Select<T>(TopElement top, T selected) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="TSrc">If there is a Select clause before, it is the type selected there. Normally, the Select clause does not exist before the Select clause, and object is specified.</typeparam>
-        /// <typeparam name="T">Type of selected.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="selected">Specify a new expression to represent the selection.</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, TopElement top, T selected) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -100,48 +72,6 @@ namespace LambdicSql.MySql
         /// <summary>
         /// SELECT clause.
         /// </summary>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="asterisk">*</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<Non> Select(TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="TSrc">If there is a Select clause before, it is the type selected there. Normally, the Select clause does not exist before the Select clause, and object is specified.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="asterisk">*</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="T">Type of selected.</typeparam>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="asterisk">*</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<T> Select<T>(TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="TSrc">If there is a Select clause before, it is the type selected there. Normally, the Select clause does not exist before the Select clause, and object is specified.</typeparam>
-        /// <typeparam name="T">Type of selected.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="asterisk">*</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
         /// <typeparam name="T">Type of selected.</typeparam>
         /// <param name="predicate">ALL or DISTINCT.</param>
         /// <param name="selected">Specify a new expression to represent the selection.</param>
@@ -160,30 +90,6 @@ namespace LambdicSql.MySql
         /// <returns>Clause.</returns>
         [SelectConverter]
         public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateElement predicate, T selected) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="T">Type of selected.</typeparam>
-        /// <param name="predicate">ALL or DISTINCT.</param>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="selected">Specify a new expression to represent the selection.</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<T> Select<T>(AggregatePredicateElement predicate, TopElement top, T selected) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="TSrc">If there is a Select clause before, it is the type selected there. Normally, the Select clause does not exist before the Select clause, and object is specified.</typeparam>
-        /// <typeparam name="T">Type of selected.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="predicate">ALL or DISTINCT.</param>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="selected">Specify a new expression to represent the selection.</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateElement predicate, TopElement top, T selected) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// SELECT clause.
@@ -226,52 +132,6 @@ namespace LambdicSql.MySql
         /// <returns>Clause.</returns>
         [SelectConverter]
         public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateElement predicate, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <param name="predicate">ALL or DISTINCT.</param>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="asterisk">*</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<Non> Select(AggregatePredicateElement predicate, TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="TSrc">If there is a Select clause before, it is the type selected there. Normally, the Select clause does not exist before the Select clause, and object is specified.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="predicate">ALL or DISTINCT.</param>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="asterisk">*</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<Non> Select<TSrc>(this Clause<TSrc> before, AggregatePredicateElement predicate, TopElement top, AsteriskElement asterisk) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="T">Type of selected.</typeparam>
-        /// <param name="predicate">ALL or DISTINCT.</param>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="asterisk">*</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<T> Select<T>(AggregatePredicateElement predicate, TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
-
-        /// <summary>
-        /// SELECT clause.
-        /// </summary>
-        /// <typeparam name="TSrc">If there is a Select clause before, it is the type selected there. Normally, the Select clause does not exist before the Select clause, and object is specified.</typeparam>
-        /// <typeparam name="T">Type of selected.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="predicate">ALL or DISTINCT.</param>
-        /// <param name="top">TOP keyword.</param>
-        /// <param name="asterisk">*</param>
-        /// <returns>Clause.</returns>
-        [SelectConverter]
-        public static Clause<T> Select<TSrc, T>(this Clause<TSrc> before, AggregatePredicateElement predicate, TopElement top, AsteriskElement<T> asterisk) { throw new InvalitContextException(nameof(Select)); }
 
         /// <summary>
         /// CASE clause.
@@ -475,26 +335,6 @@ namespace LambdicSql.MySql
         public static Clause<T> RightJoin<T>(this Clause<T> before, object table, bool condition) { throw new InvalitContextException(nameof(RightJoin)); }
 
         /// <summary>
-        /// FULL JOIN clause.
-        /// </summary>
-        /// <param name="table">Table or subquery.</param>
-        /// <param name="condition">It is a condition of RIGHT JOIN.</param>
-        /// <returns>Clause.</returns>
-        [JoinConverter(Name = "FULL JOIN")]
-        public static Clause<Non> FullJoin(object table, bool condition) { throw new InvalitContextException(nameof(FullJoin)); }
-
-        /// <summary>
-        /// FULL JOIN clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="table">Table or subquery.</param>>
-        /// <param name="condition">It is a condition of RIGHT JOIN.</param>
-        /// <returns>Clause.</returns>
-        [JoinConverter(Name = "FULL JOIN")]
-        public static Clause<T> FullJoin<T>(this Clause<T> before, object table, bool condition) { throw new InvalitContextException(nameof(FullJoin)); }
-
-        /// <summary>
         /// CROSS JOIN clause.
         /// </summary>
         /// <param name="expression">Table or subquery.</param>
@@ -549,31 +389,13 @@ namespace LambdicSql.MySql
         public static Clause<T> GroupBy<T>(this Clause<T> before, params object[] columns) { throw new InvalitContextException(nameof(GroupBy)); }
 
         /// <summary>
-        /// GROUP BY ROLLUP clause.
-        /// </summary>
-        /// <param name="columns">Specify the target column of GROUP BY.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "GROUP BY ROLLUP")]
-        public static Clause<Non> GroupByRollup(params object[] columns) { throw new InvalitContextException(nameof(GroupByRollup)); }
-
-        /// <summary>
-        /// GROUP BY ROLLUP clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="columns">Specify the target column of GROUP BY.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "GROUP BY ROLLUP")]
-        public static Clause<T> GroupByRollup<T>(this Clause<T> before, params object[] columns) { throw new InvalitContextException(nameof(GroupByRollup)); }
-
-        /// <summary>
         /// GROUP BY columns WITH ROLLUP clause.
         /// </summary>
         /// <param name="columns">Specify the target column of GROUP BY.</param>
         /// <returns>Clause.</returns>
         /// 
         [MethodFormatConverter(Format = "GROUP BY |[<, >0] WITH ROLLUP")]
-        public static Clause<Non> GroupByWithRollup(params object[] columns) { throw new InvalitContextException(nameof(GroupByRollup)); }
+        public static Clause<Non> GroupByWithRollup(params object[] columns) { throw new InvalitContextException(nameof(GroupByWithRollup)); }
 
         /// <summary>
         /// GROUP BY columns WITH ROLLUP clause.
@@ -583,43 +405,7 @@ namespace LambdicSql.MySql
         /// <param name="columns">Specify the target column of GROUP BY.</param>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "GROUP BY |[<, >1] WITH ROLLUP")]
-        public static Clause<T> GroupByWithRollup<T>(this Clause<T> before, params object[] columns) { throw new InvalitContextException(nameof(GroupByRollup)); }
-
-        /// <summary>
-        /// GROUP BY CUBE clause.
-        /// </summary>
-        /// <param name="columns">Specify the target column of GROUP BY.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "GROUP BY CUBE")]
-        public static Clause<Non> GroupByCube(params object[] columns) { throw new InvalitContextException(nameof(GroupByCube)); }
-
-        /// <summary>
-        /// GROUP BY CUBE clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="columns">Specify the target column of GROUP BY.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "GROUP BY CUBE")]
-        public static Clause<T> GroupByCube<T>(this Clause<T> before, params object[] columns) { throw new InvalitContextException(nameof(GroupByCube)); }
-
-        /// <summary>
-        /// GROUP BY GROUPING SETS clause.
-        /// </summary>
-        /// <param name="columns">Specify the target column of GROUP BY.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "GROUP BY GROUPING SETS")]
-        public static Clause<Non> GroupByGroupingSets(params object[] columns) { throw new InvalitContextException(nameof(GroupByGroupingSets)); }
-
-        /// <summary>
-        /// GROUP BY GROUPING SETS clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="columns">Specify the target column of GROUP BY.</param>
-        /// <returns>Clause.</returns>
-        [FuncStyleConverter(Name = "GROUP BY GROUPING SETS")]
-        public static Clause<T> GroupByGroupingSets<T>(this Clause<T> before, params object[] columns) { throw new InvalitContextException(nameof(GroupByGroupingSets)); }
+        public static Clause<T> GroupByWithRollup<T>(this Clause<T> before, params object[] columns) { throw new InvalitContextException(nameof(GroupByWithRollup)); }
 
         /// <summary>
         /// HAVING clause.
@@ -714,42 +500,6 @@ namespace LambdicSql.MySql
         public static Clause<T> Offset<T>(this Clause<T> before, object offset) { throw new InvalitContextException(nameof(Offset)); }
 
         /// <summary>
-        /// OFFSET count ROWS clause.
-        /// </summary>
-        /// <param name="count">Number of rows to acquire.</param>
-        /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "OFFSET |[0] ROWS")]
-        public static Clause<Non> OffsetRows(object count) { throw new InvalitContextException(nameof(OffsetRows)); }
-
-        /// <summary>
-        /// OFFSET count ROWS clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="count">Number of rows to acquire.</param>
-        /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "OFFSET |[1] ROWS")]
-        public static Clause<T> OffsetRows<T>(this Clause<T> before, object count) { throw new InvalitContextException(nameof(OffsetRows)); }
-
-        /// <summary>
-        /// FETCH NEXT count ROWS ONLY clause.
-        /// </summary>
-        /// <param name="count">Number of rows to acquire.</param>
-        /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "FETCH NEXT |[0] ROWS ONLY")]
-        public static Clause<Non> FetchNextRowsOnly(object count) { throw new InvalitContextException(nameof(FetchNextRowsOnly)); }
-
-        /// <summary>
-        /// FETCH NEXT count ROWS ONLY clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="count">Number of rows to acquire.</param>
-        /// <returns>Clause.</returns>
-        [MethodFormatConverter(Format = "FETCH NEXT |[1] ROWS ONLY")]
-        public static Clause<T> FetchNextRowsOnly<T>(this Clause<T> before, object count) { throw new InvalitContextException(nameof(FetchNextRowsOnly)); }
-
-        /// <summary>
         /// UNION clause.
         /// </summary>
         /// <returns>Clause.</returns>
@@ -782,90 +532,6 @@ namespace LambdicSql.MySql
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
         public static Clause<T> Union<T>(this Clause<T> before, AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Union)); }
-
-        /// <summary>
-        /// INTERSECT clause.
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Intersect() { throw new InvalitContextException(nameof(Intersect)); }
-
-        /// <summary>
-        /// INTERSECT clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Intersect<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Intersect)); }
-
-        /// <summary>
-        /// INTERSECT clause.
-        /// </summary>
-        /// <param name="all">If isAll is true, add an ALL predicate.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Intersect(AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Intersect)); }
-
-        /// <summary>
-        /// INTERSECT clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="all">If isAll is true, add an ALL predicate.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Intersect<T>(this Clause<T> before, AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Intersect)); }
-
-        /// <summary>
-        /// EXCEPT clause.
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Except() { throw new InvalitContextException(nameof(Except)); }
-
-        /// <summary>
-        /// EXCEPT clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Except<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Except)); }
-
-        /// <summary>
-        /// EXCEPT clause.
-        /// </summary>
-        /// <param name="all">If isAll is true, add an ALL predicate.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Except(AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Except)); }
-
-        /// <summary>
-        /// EXCEPT clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <param name="all">If isAll is true, add an ALL predicate.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Except<T>(this Clause<T> before, AggregatePredicateAllElement all) { throw new InvalitContextException(nameof(Except)); }
-
-        /// <summary>
-        /// MINUS clause.
-        /// </summary>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<Non> Minus() { throw new InvalitContextException(nameof(Minus)); }
-
-        /// <summary>
-        /// MINUS clause.
-        /// </summary>
-        /// <typeparam name="T">The type represented by before clause.</typeparam>
-        /// <param name="before">It is the previous clause.</param>
-        /// <returns>Clause.</returns>
-        [ClauseStyleConverter]
-        public static Clause<T> Minus<T>(this Clause<T> before) { throw new InvalitContextException(nameof(Minus)); }
 
         /// <summary>
         /// UPDATE clause.
@@ -1003,34 +669,7 @@ namespace LambdicSql.MySql
         /// <param name="target">target.</param>
         /// <returns>IS NOT NULL</returns>
         [MethodFormatConverter(Format = "[0] IS NOT NULL|")]
-        public static bool IsNotNull(object target) { throw new InvalitContextException(nameof(IsNull)); }
-
-        /// <summary>
-        /// WITH clause.
-        /// </summary>
-        /// <param name="subQuerys">sub querys.</param>
-        /// <returns></returns>
-        [WithConverter]
-        public static Clause<Non> With(params Sql[] subQuerys) { throw new InvalitContextException(nameof(With)); }
-
-        /// <summary>
-        /// WITH clause.
-        /// </summary>
-        /// <typeparam name="T">Type representing argument of recursive part.</typeparam>
-        /// <param name="args">Argument of recursive part.</param>
-        /// <param name="subQuery">sub query.</param>
-        /// <returns>Clause.</returns>
-        [WithConverter]
-        public static Clause<T> With<T>(SqlRecursiveArguments<T> args, Sql subQuery) { throw new InvalitContextException(nameof(With)); }
-
-        /// <summary>
-        /// RECURSIVE clause.
-        /// </summary>
-        /// <typeparam name="T">Type representing argument of recursive part.</typeparam>
-        /// <param name="args">Argument of recursive part.</param>
-        /// <returns>Class representing argument of recursive part.</returns>
-        [RecursiveConverter]
-        public static RecursiveArguments<T> Recursive<T>(T args) { throw new InvalitContextException(nameof(Select)); }
+        public static bool IsNotNull(object target) { throw new InvalitContextException(nameof(IsNotNull)); }
 
         /// <summary>
         /// CREATE TABLE clause.
@@ -1044,7 +683,7 @@ namespace LambdicSql.MySql
         /// </summary>
         /// <returns>Clause.</returns>
         [MethodFormatConverter(Format = "CREATE TABLE IF NOT EXISTS [0](|[#$<,>1])", FormatDirection = FormatDirection.Vertical)]
-        public static Clause<Non> CreateTableIfNotExists(object table, params TableDefinitionElement[] designer) { throw new InvalitContextException(nameof(CreateTable)); }
+        public static Clause<Non> CreateTableIfNotExists(object table, params TableDefinitionElement[] designer) { throw new InvalitContextException(nameof(CreateTableIfNotExists)); }
 
         /// <summary>
         /// CONSTRAINT clause.
@@ -1149,7 +788,7 @@ namespace LambdicSql.MySql
         /// <param name="value">value</param>
         /// <returns>Clause.</returns>
         [ClauseStyleConverter]
-        public static Clause<ConstraintElement> Default(object value) { throw new InvalitContextException(nameof(NotNull)); }
+        public static Clause<ConstraintElement> Default(object value) { throw new InvalitContextException(nameof(Default)); }
 
         /// <summary>
         /// REFERENCES clause.
@@ -1176,22 +815,5 @@ namespace LambdicSql.MySql
         /// <returns>Clause.</returns>
         [ClauseStyleConverter(Name = "DROP TABLE IF EXISTS")]
         public static Clause<Non> DropTableIfExists(params object[] tables) { throw new InvalitContextException(nameof(DropTableIfExists)); }
-
-
-        /// <summary>
-        /// DROP DATABASE clause.
-        /// </summary>
-        /// <param name="name">DataBase name.</param>
-        /// <returns>Clause chain. You can write SQL statements in succession, of course you can end it.</returns>
-        [MethodFormatConverter(Format = "CREATE DATABASE [!0]")]
-        public static Clause<Non> CreateDataBase(string name) { throw new InvalitContextException(nameof(CreateDataBase)); }
-
-        /// <summary>
-        /// DROP DATABASE clause.
-        /// </summary>
-        /// <param name="name">DataBase name.</param>
-        /// <returns>Clause chain. You can write SQL statements in succession, of course you can end it.</returns>
-        [MethodFormatConverter(Format = "DROP DATABASE [!0]")]
-        public static Clause<Non> DropDataBase(string name) { throw new InvalitContextException(nameof(DropDataBase)); }
     }
 }

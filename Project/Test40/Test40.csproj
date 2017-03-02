@@ -85,7 +85,6 @@
     <Compile Include="TestSymbolClausesSelect.cs" />
     <Compile Include="TestSymbolClausesSetOperator.cs" />
     <Compile Include="TestSymbolClausesWhereGroupByHavingOrderBy.cs" />
-    <Compile Include="TestSymbolClausesWithRecursive.cs" />
     <Compile Include="TestSymbolEtc.cs" />
     <Compile Include="TestSymbolFuncs.cs" />
   </ItemGroup>
