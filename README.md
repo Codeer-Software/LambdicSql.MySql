@@ -1,4 +1,4 @@
-﻿LambdicSql for DB2_β 0.1.0
+﻿LambdicSql for MySql_β 0.1.0
 ======================
 
 ## Features ...
