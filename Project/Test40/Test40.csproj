@@ -42,9 +42,8 @@
       <HintPath>..\packages\Dapper.1.50.2\lib\net40\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LambdicSql, Version=0.36.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
-      <HintPath>..\packages\LambdicSql.0.36.0\lib\net35\LambdicSql.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="LambdicSql.NetFramework.3.5, Version=0.48.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
+      <HintPath>..\packages\LambdicSql.0.48.0\lib\net35\LambdicSql.NetFramework.3.5.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.9.9\lib\net40\MySql.Data.dll</HintPath>
@@ -94,9 +93,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LambdicSql.MySql\LambdicSql.MySql.csproj">
+    <ProjectReference Include="..\LambdicSql.MySql.NetFramework.3.5\LambdicSql.MySql.NetFramework.3.5.csproj">
       <Project>{335592c4-241d-4e16-94e0-b1a23fc279b9}</Project>
-      <Name>LambdicSql.MySql</Name>
+      <Name>LambdicSql.MySql.NetFramework.3.5</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
