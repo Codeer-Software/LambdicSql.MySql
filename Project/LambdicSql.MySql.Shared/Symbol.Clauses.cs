@@ -1,5 +1,6 @@
 using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
+using LambdicSql.MySql.ConverterAttributes;
 using LambdicSql.Specialized.SymbolConverters;
 
 namespace LambdicSql.MySql
