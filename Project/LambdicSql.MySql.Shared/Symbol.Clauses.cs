@@ -358,7 +358,7 @@ namespace LambdicSql.MySql
         /// </summary>
         /// <param name="condition">It is a conditional expression of WHERE.</param>
         /// <returns>Clause.</returns>
-        [ConditionClauseConverter(Name = "WHERE")]
+        [MethodFormatConverter(Format = "WHERE [0]", VanishIfEmptyParams = true)]
         public static Clause<Non> Where(bool condition) { throw new InvalitContextException(nameof(Where)); }
 
         /// <summary>
@@ -368,7 +368,7 @@ namespace LambdicSql.MySql
         /// <param name="before">It is the previous clause.</param>
         /// <param name="condition">It is a conditional expression of WHERE.</param>
         /// <returns>Clause.</returns>
-        [ConditionClauseConverter(Name = "WHERE")]
+        [MethodFormatConverter(Format = "WHERE [1]", VanishIfEmptyParams = true)]
         public static Clause<T> Where<T>(this Clause<T> before, bool condition) { throw new InvalitContextException(nameof(Where)); }
 
         /// <summary>
@@ -413,7 +413,7 @@ namespace LambdicSql.MySql
         /// </summary>
         /// <param name="condition">It is a conditional expression of HAVING.</param>
         /// <returns>Clause.</returns>
-        [ConditionClauseConverter(Name = "HAVING")]
+        [MethodFormatConverter(Format = "HAVING [0]", VanishIfEmptyParams = true)]
         public static Clause<Non> Having(bool condition) { throw new InvalitContextException(nameof(Having)); }
 
         /// <summary>
@@ -423,7 +423,7 @@ namespace LambdicSql.MySql
         /// <param name="before">It is the previous clause.</param>
         /// <param name="condition">It is a conditional expression of HAVING.</param>
         /// <returns>Clause.</returns>
-        [ConditionClauseConverter(Name = "HAVING")]
+        [MethodFormatConverter(Format = "HAVING [1]", VanishIfEmptyParams = true)]
         public static Clause<T> Having<T>(this Clause<T> before, bool condition) { throw new InvalitContextException(nameof(Having)); }
 
         /// <summary>
@@ -636,7 +636,7 @@ namespace LambdicSql.MySql
         /// <typeparam name="T">Retunn type.</typeparam>
         /// <param name="sub">Sub query.</param>
         /// <returns>Sub query's selected value.</returns>
-        [AllConverter]
+        [FuncStyleConverter]
         public static T All<T>(Clause<T> sub) { throw new InvalitContextException(nameof(All)); }
 
         /// <summary>
@@ -645,7 +645,7 @@ namespace LambdicSql.MySql
         /// <typeparam name="T">Retunn type.</typeparam>
         /// <param name="sub">Sub query.</param>
         /// <returns>Sub query's selected value.</returns>
-        [AllConverter]
+        [FuncStyleConverter]
         public static T All<T>(Sql<T> sub) { throw new InvalitContextException(nameof(All)); }
 
         /// <summary>
