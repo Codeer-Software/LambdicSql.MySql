@@ -138,7 +138,7 @@ namespace Sample
     }
 }
 ```
-<img src="https://github.com/Codeer-Software/LambdicSql/blob/master/SummaryCode.png"><br>
+<img src="https://github.com/Codeer-Software/LambdicSql.MySql/blob/master/SummaryCode.png"><br>
 ## Samples
 Look for how to use from the tests.<br>
 https://github.com/Codeer-Software/LambdicSql.MySql/tree/master/Project/Test40<br>
@@ -398,7 +398,7 @@ public void TestFormatText()
         {
             name = db.tbl_staff.name,
             payment_date = db.tbl_remuneration.payment_date,
-            money = (decimal)"{0} + 1000".ToSql(db.tbl_remuneration.money),
+            money = (decimal)"{0} + 1000".ToSqlObject(db.tbl_remuneration.money),
         }).
         From(db.tbl_remuneration).
             Join(db.tbl_staff, db.tbl_remuneration.staff_id == db.tbl_staff.id).
@@ -517,5 +517,5 @@ SELECT
 	tbl_remuneration.money + @bonus AS money
 FROM tbl_remuneration 
     JOIN tbl_staff ON tbl_staff.id = tbl_remuneration.staff_id
-WHERE ((@p_0) < (tbl_remuneration.money)) AND ((tbl_remuneration.money) < (@p_1))
+WHERE @p_0 < tbl_remuneration.money AND tbl_remuneration.money < @p_1
 ```
